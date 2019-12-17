@@ -43,7 +43,9 @@ class TicketsManager{
         collector.on('collect', async(reaction) => {
             if (reaction.emoji.name === "✅") {
                 message.channel.delete()
-                message.author.send(":white_check_mark: Votre ticket à bien été supprimé !")
+                try{
+                    message.author.send(":white_check_mark: Votre ticket à bien été supprimé !")
+                }catch(e){}
             }
 
             if (reaction.emoji.name === "❌") {

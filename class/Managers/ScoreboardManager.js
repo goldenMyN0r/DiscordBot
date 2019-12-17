@@ -1,4 +1,4 @@
-const config = require('../../config/scoreboard.json');
+const config = require('../../config/scoreboard.json')
 class ScoreboardManager{
     refresh(client){
         setInterval(function(){

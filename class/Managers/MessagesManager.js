@@ -1,6 +1,5 @@
-const Discord = require('discord.js');
-const config = require('../../config/main.json');
-const permissions = require('../Helpers/permission');
+const config = require('../../config/main.json')
+const permissions = require('../Helpers/permission')
 const prefix = '/';
 class MessagesManager{
 

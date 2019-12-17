@@ -26,7 +26,6 @@ class RegisterManager{
             console.log(`${files.length} commandes chargés`);
             jsfile.forEach((f) =>{
                 let props = require(path(`commands/${f}`));
-                console.log(`${f} chargé`);
                 bot.commands.set(props.help.name, props);
             });
         });
@@ -38,11 +37,9 @@ class RegisterManager{
         fs.readdir(path(`events/`), (error, f) => {
             if (error) { return console.error(error); }
             console.log(`${f.length} events chargés`);
-        
             f.forEach((f) => {
                 let events = require(path(`events/${f}`));
                 let event = f.split('.')[0];
-                console.log(`${f} chargé`);
                 bot.on(event, events.bind(null, bot));
             });
         });
